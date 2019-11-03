@@ -1,0 +1,173 @@
+body {
+    background-image: url('tlo2.jpg') ;
+    background-size: cover;
+}
+
+a.zakladkihome{
+    background-color: white;
+    width: 87%;
+    height:60px;
+    opacity: 0.7;
+    transition: transform 0.2s ease-in-out;
+    text-decoration: none;
+    position:relative;
+    animation-name: anim;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+}
+a.zakladki{
+    background-color: white;
+    width: 87%;
+    height:60px;
+    opacity: 0.7;
+    transition: transform 0.2s ease-in-out;
+    text-decoration: none;
+}
+
+a.zakladki:hover,
+a.zakladkihome:hover{
+    transform: scale(1.2);
+}
+
+.siatka {
+    display: grid;
+    grid-template: 25% 25% 25%/ 15% 15% 15% 35% 5%;
+    margin: 5% 10%;
+    justify-content: center;
+    align-items: top;
+}
+#zdjeciehome{
+    grid-area: 1/4/4/5;
+    width: 100%;
+    margin-bottom:5%;
+    margin-right:5%;
+    overflow: contain;
+    position:relative;
+    animation-name: animfoto;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-out;
+}
+
+#zdjeciekontakt{
+    grid-area: 1/4/4/5;
+    width: 100%;
+    overflow: contain;
+    margin-bottom:5%;
+    margin-right:5%;
+}
+
+#home{
+    grid-area: 1/1/2/2;
+    text-align: center;
+}
+
+#o_mnie{
+    grid-area: 1/2/2/3;
+    text-align: center;
+}
+
+#kontakt{
+    grid-area: 1/3/2/4;
+    text-align: center;
+}
+
+p{
+    align-self:center;
+    color: black;
+    font-size: 19px;
+}
+.podstrona {
+    grid-area: 2/1/3/4;
+    background-color: white;
+    text-align: center;
+    opacity: 0.7;
+    margin-top: 5%;
+    margin-right:5%;
+    padding: 5%;
+    word-wrap: break-word;
+}
+
+#ikony{
+    grid-area: 3/5/4/6;
+}
+
+.ikonahover{
+    transition: transform 0.2s ease-in-out;
+}
+.ikonahover:hover{
+    transform: scale(1.2);
+}
+
+@keyframes anim{
+    0% {opacity:0.1; left: -20%}
+    100%{opacity:0.7; left:0%}
+}
+
+@keyframes animfoto{
+    0% {opacity:0.3; top: 50%}
+    100%{opacity:1; top:0%}
+}
+
+@media (max-width:1000px){
+    .siatka {
+        grid-template: 50% 25% 25%/ 18% 18% 18% 35% 5%;
+        margin: 5% 5%;
+    }
+
+@media (max-width:600px){
+    .siatka {
+        display: grid;
+        grid-template: 50% 25% 25%/ 30% 30% 30%;
+        margin: 5% 0%; 
+    }
+    #home{
+        grid-area: 1/1/2/2;
+    }
+    #o_mnie{
+        grid-area: 1/2/2/3;
+    }
+    #kontakt{
+        grid-area: 1/3/2/4;
+    }
+    #zdjeciehome{
+        margin-top: 5%;
+        margin-right:5%;
+        grid-area: 2/1/4/3;
+    }
+    #zdjeciekontakt{
+        margin-top: 5%;
+        margin-right:5%;
+        grid-area: 2/3/3/4; 
+    }
+    
+    #ikony{
+        grid-area: 3/3/4/4;
+    }
+
+    .podstrona{
+        margin-top: 5%;
+        grid-area: 2/1/4/3; 
+    }
+    
+}
+@media (max-width:400px){
+    .siatka {
+        display: grid;
+        grid-template: 25% 25% 25% 2%/ 30% 30% 30%;
+        margin: 5% 0%; 
+    }
+    .podstrona{
+        margin-top: 5%;
+        grid-area: 2/1/3/4; 
+    }
+    #zdjeciekontakt,
+    #zdjeciehome{
+        grid-area: 3/1/4/4;
+        margin-right:5%; 
+    }
+
+    #ikony{
+        grid-area: 4/1/5/2;
+    }
+    
+}
